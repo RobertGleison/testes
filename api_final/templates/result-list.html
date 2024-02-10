@@ -23,24 +23,24 @@
   </tr>
   {% for row in results %}
   <tr>
-    <td>{{ row['Registro ANS'] }}</td>
-    <td>{{ row['CNPJ'] }}</td>
-    <td>{{ row['Razão Social'] }}</td>
-    <td>{{ row['Nome Fantasia'] }}</td>
-    <td>{{ row['Modalidade'] }}</td>
-    <td>{{ row['Logradouro'] }}</td>
-    <td>{{ row['Número'] }}</td>
-    <td>{{ row['Complemento'] }}</td>
-    <td>{{ row['Cidade'] }}</td>
-    <td>{{ row['UF'] }}</td>
-    <td>{{ row['CEP'] }}</td>
-    <td>{{ row['DDD'] }}</td>
-    <td>{{ row['Telefone'] }}</td>
-    <td>{{ row['Fax'] }}</td>
-    <td>{{ row['Email'] }}</td>
-    <td>{{ row['Representante'] }}</td>
-    <td>{{ row['Cargo Representante'] }}</td>
-    <td>{{ row['Região Vendas'] }}</td>
+    <td>{{ row['Registro ANS']|default('') }}</td>
+    <td>{{ row['CNPJ']|default('') }}</td>
+    <td>{{ row['Razão Social']|default('') }}</td>
+    <td>{{ row['Nome Fantasia']|default('') }}</td>
+    <td>{{ row['Modalidade']|default('') }}</td>
+    <td>{{ row['Logradouro']|default('') }}</td>
+    <td>{{ row['Número']|default('') }}</td>
+    <td>{{ row['Complemento']|default('') }}</td>
+    <td>{{ row['Cidade']|default('') }}</td>
+    <td>{{ row['UF']|default('') }}</td>
+    <td>{{ row['CEP']|default('') }}</td>
+    <td>{{ row['DDD']|default('') }}</td>
+    <td>{{ row['Telefone']|default('') }}</td>
+    <td>{{ row['Fax']|default('') }}</td>
+    <td>{{ row['Email']|default('') }}</td>
+    <td>{{ row['Representante']|default('') }}</td>
+    <td>{{ row['Cargo Representante']|default('') }}</td>
+    <td>{{ row['Região Vendas']|default('') }}</td>
   </tr>
   {% endfor %}
 </table>

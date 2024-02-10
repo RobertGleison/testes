@@ -4,10 +4,13 @@ import csv
 app = Flask(__name__)
 
 CSV_ROWS = []
-with open('Relatorio_cadop.csv', 'r', encoding='latin1') as csvfile:
+with open('Relatorio_cadop.csv', 'r', encoding='utf-8') as csvfile:
     csvreader = csv.DictReader(csvfile, delimiter=';')
     for row in csvreader:
         CSV_ROWS.append(row)
+
+for i in CSV_ROWS:
+    print(i)
 
 #Separar controller de funções auxiliares
 
