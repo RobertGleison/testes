@@ -1,0 +1,47 @@
+{% extends 'base.html' %} {% block content %}
+
+<table>
+  <tr>
+    <th><b>Registro ANS</b></th>
+    <th><b>CNPJ</b></th>
+    <th><b>Razão Social</b></th>
+    <th><b>Nome Fantasia</b></th>
+    <th><b>Modalidade</b></th>
+    <th><b>Logradouro</b></th>
+    <th><b>Número</b></th>
+    <th><b>Complemento</b></th>
+    <th><b>Cidade</b></th>
+    <th><b>UF</b></th>
+    <th><b>CEP</b></th>
+    <th><b>DDD</b></th>
+    <th><b>Telefone</b></th>
+    <th><b>Fax</b></th>
+    <th><b>Email</b></th>
+    <th><b>Representante</b></th>
+    <th><b>Cargo Representante</b></th>
+    <th><b>Região Vendas</b></th>
+  </tr>
+  {% for row in results %}
+  <tr>
+    <td>{{ row['Registro ANS'] }}</td>
+    <td>{{ row['CNPJ'] }}</td>
+    <td>{{ row['Razão Social'] }}</td>
+    <td>{{ row['Nome Fantasia'] }}</td>
+    <td>{{ row['Modalidade'] }}</td>
+    <td>{{ row['Logradouro'] }}</td>
+    <td>{{ row['Número'] }}</td>
+    <td>{{ row['Complemento'] }}</td>
+    <td>{{ row['Cidade'] }}</td>
+    <td>{{ row['UF'] }}</td>
+    <td>{{ row['CEP'] }}</td>
+    <td>{{ row['DDD'] }}</td>
+    <td>{{ row['Telefone'] }}</td>
+    <td>{{ row['Fax'] }}</td>
+    <td>{{ row['Email'] }}</td>
+    <td>{{ row['Representante'] }}</td>
+    <td>{{ row['Cargo Representante'] }}</td>
+    <td>{{ row['Região Vendas'] }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

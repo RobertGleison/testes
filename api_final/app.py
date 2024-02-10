@@ -23,7 +23,8 @@ def search(term):
             if term in cell_value:
                 matching_rows.append(row)
                 break
-    return render_template('index.html', results=matching_rows)
+    return render_template('result-list.html', results=matching_rows)
+    # return jsonify(matching_rows)
 
 
 if __name__ == '__main__':
