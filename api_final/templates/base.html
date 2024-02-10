@@ -7,17 +7,12 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='style.css') }}"
     />
-    <nav>
+    <nav class="home">
       <a href="/">Home</a>
     </nav>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <title>IntuitiveCare Teste</title>
   </head>
   <body>
     {% block content %} {% endblock %}
-    <script
-      type="text/javascript"
-      src="{{ url_for('static', filename='main.js') }}"
-    ></script>
   </body>
 </html>
