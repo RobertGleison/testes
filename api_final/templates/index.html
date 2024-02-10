@@ -1,13 +1,11 @@
 {% extends 'base.html' %} {% block content %}
-<div id="app">
-  <form class="formulario container" id="form01">
-    <div>
-      <label for="search">Busca por termo: </label>
-      <input type="text" id="searchInput" name="search"/>
-    </div>
-    <br />
-    <button type="button" class="btn" @click="searchTerm">PESQUISAR</button>
-  </form>
-</div>
-  {% endblock %}
-</div>
+<form
+  name="formulario container"
+  action="javascript:window.open('/search/'+document.forms['formulario container'].elements['id'].value,'_self')"
+>
+  Procurar por termo: <input name="id" type="text" /><input
+    type="submit"
+    value="PESQUISAR"
+  />
+</form>
+{% endblock %}

@@ -1,19 +1,13 @@
 from flask import Flask, render_template
 import csv
-app = Flask(__name__)
 
+app = Flask(__name__)
 
 CSV_ROWS = []
 with open('Relatorio_cadop.csv', 'r', encoding='utf-8') as csvfile:
     csvreader = csv.DictReader(csvfile, delimiter=';')
     for row in csvreader:
         CSV_ROWS.append(row)
-for i in CSV_ROWS:
-    print(i)
-#Separar controller de funções auxiliares
-@app.route('/')
-def index():
-    return render_template('index.html')
 
 @app.route('/search/<term>')
 def search(term):
@@ -26,6 +20,10 @@ def search(term):
                 matching_rows.append(row)
                 break
     return render_template('result-list.html', results=matching_rows)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 
 if __name__ == '__main__':
