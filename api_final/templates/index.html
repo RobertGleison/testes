@@ -1,3 +1,14 @@
 {% extends 'base.html' %} {% block content %}
-<h1>Hello world</h1>
+<div id="app">
+  <form class="formulario container" id="form01">
+    <div>
+      <label for="search">Busca por termo: </label>
+      <input type="text" id="search" name="search" />
+    </div>
+    <br />
+    <button type="button" class="btn" onclick="getRegistros()">
+      PESQUISAR
+    </button>
+  </form>
+</div>
 {% endblock %}
