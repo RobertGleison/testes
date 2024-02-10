@@ -21,13 +21,15 @@ def index():
 @app.route('/search/<term>')
 def search(term):
     matching_rows = []
+    term_upper = term.upper()  # Convert term to uppercase
     for row in CSV_ROWS:
         for cell_value in row.values():
-            if term in cell_value:
+            cell_value_upper = cell_value.upper()  # Convert cell_value to uppercase
+            if term_upper in cell_value_upper:
                 matching_rows.append(row)
                 break
     return render_template('result-list.html', results=matching_rows)
-    # return jsonify(matching_rows)
+
 
 
 if __name__ == '__main__':
