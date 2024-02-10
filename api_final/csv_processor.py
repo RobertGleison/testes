@@ -4,10 +4,13 @@ CSV_ROWS = []
 
 #Lê o csv e guarda suas linhas numa lista
 def read_csv() -> None:
-    with open('Relatorio_cadop.csv', 'r', encoding='utf-8') as csvfile:
-        csvreader = csv.DictReader(csvfile, delimiter=';')
-        for row in csvreader:
-            CSV_ROWS.append(row)
+    try:
+        with open('Relatorio_cadop.csv', 'r', encoding='utf-8') as csvfile:
+            csvreader = csv.DictReader(csvfile, delimiter=';')
+            for row in csvreader:
+                CSV_ROWS.append(row)
+    except RuntimeError:
+        print("Error in reading the csv file.")
 
 #Retorna as linhas compatíveis com a pesquisa de texto
 def append_matching_rows(term: str) -> list[str]:
