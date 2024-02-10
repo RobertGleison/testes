@@ -5,6 +5,13 @@ const TaskApp = {
       message: "Render vue",
     };
   },
+  methods: {
+    searchTerm() {
+      const term = document.getElementById("searchInput").value;
+      // Redirect to the search route with the term
+      window.location.href = `/search/${term}`;
+    },
+  },
   delimiters: ["{", "}"],
 };
 

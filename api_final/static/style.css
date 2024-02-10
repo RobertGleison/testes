@@ -1,3 +1,36 @@
+* {
+  margin: auto, 0;
+}
 body {
-  background: gray;
+  background-color: #bfe3f8;
+}
+
+.btn {
+  height: 50px;
+  width: 100%;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.container div {
+  flex: 1 1 400px;
+  margin: 5px;
+}
+
+.formulario {
+  background-color: #2f8ba1;
+  padding: 5px;
+  font-size: 1.5rem;
+  border-radius: 7px;
+}
+.formulario input {
+  height: 1.5rem;
+  font-size: 1rem;
+  margin: 3px 0;
+  width: 60%;
+  float: right;
 }

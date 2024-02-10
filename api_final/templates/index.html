@@ -1,15 +1,12 @@
 {% extends 'base.html' %} {% block content %}
 <div id="app">
-  <h1>{ message }</h1>
   <form class="formulario container" id="form01">
     <div>
       <label for="search">Busca por termo: </label>
-      <input type="text" id="search" name="search" />
+      <input type="text" id="searchInput" name="search" />
     </div>
     <br />
-    <button type="button" class="btn" onclick="getRegistros()">
-      PESQUISAR
-    </button>
+    <button type="button" class="btn" onclick="searchTerm()">PESQUISAR</button>
   </form>
 </div>
 {% endblock %}
