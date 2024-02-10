@@ -6,7 +6,69 @@
       <input type="text" id="searchInput" name="search" />
     </div>
     <br />
-    <button type="button" class="btn" onclick="searchTerm()">PESQUISAR</button>
+    <button type="button" class="btn" @click="searchTerm">PESQUISAR</button>
   </form>
+
+  <section class="container" id="registrosFiltrados" style="display: none">
+    <button class="btn" @click="newSearch">FAZER NOVA PESQUISA</button>
+
+    <div>
+      <table>
+        <tr>
+          <th><b>Registro ANS</b></th>
+          <th><b>CNPJ</b></th>
+          <th><b>Razão Social</b></th>
+          <th><b>Nome Fantasia</b></th>
+          <th><b>Modalidade</b></th>
+          <th><b>Logradouro</b></th>
+          <th><b>Número</b></th>
+          <th><b>Complemento</b></th>
+          <th><b>Cidade</b></th>
+          <th><b>UF</b></th>
+          <th><b>CEP</b></th>
+          <th><b>DDD</b></th>
+          <th><b>Telefone</b></th>
+          <th><b>Fax</b></th>
+          <th><b>Email</b></th>
+          <th><b>Representante</b></th>
+          <th><b>Cargo Representante</b></th>
+          <th><b>Região Vendas</b></th>
+          <th><b>Registro ANS</b></th>
+        </tr>
+        {% for e in results %}
+        <tr>
+          <td>{{ e[0] }}</td>
+          <td>{{ e[1] }}</td>
+          <td>{{ e[2] }}</td>
+          <td>{{ e[3] }}</td>
+          <td>{{ e[4] }}</td>
+          <td>{{ e[5] }}</td>
+          <td>{{ e[6] }}</td>
+          <td>{{ e[7] }}</td>
+          <td>{{ e[8] }}</td>
+          <td>{{ e[9] }}</td>
+          <td>{{ e[10] }}</td>
+          <td>{{ e[11] }}</td>
+          <td>{{ e[12] }}</td>
+          <td>{{ e[13] }}</td>
+          <td>{{ e[14] }}</td>
+          <td>{{ e[15] }}</td>
+          <td>{{ e[16] }}</td>
+          <td>{{ e[17] }}</td>
+          <td>{{ e[18] }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </section>
 </div>
+
+<script>
+  function newSearch() {
+    // You can implement the logic for initiating a new search here
+    // For example, you can reset the input field and hide the search results section
+    document.getElementById("searchInput").value = "";
+    document.getElementById("registrosFiltrados").style.display = "none";
+  }
+</script>
 {% endblock %}

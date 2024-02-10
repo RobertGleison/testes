@@ -3,13 +3,20 @@ const TaskApp = {
   data() {
     return {
       message: "Render vue",
+      searchResults: [],
     };
   },
   methods: {
-    searchTerm() {
+    async searchTerm() {
       const term = document.getElementById("searchInput").value;
-      // Redirect to the search route with the term
-      window.location.href = `/search/${term}`;
+      const response = await fetch(`/search/${term}`);
+      const data = await response.json();
+      this.searchResults = data;
+    },
+    newSearch() {
+      // Reset the search input field and hide the search results section
+      document.getElementById("searchInput").value = "";
+      document.getElementById("registrosFiltrados").style.display = "none";
     },
   },
   delimiters: ["{", "}"],

@@ -19,11 +19,12 @@ def index():
 def search(term):
     matching_rows = []
     for row in CSV_ROWS:
-        for cell in row:
-            if cell.find(term) == 1:
+        for cell_value in row.values():
+            if term in cell_value:
                 matching_rows.append(row)
                 break
-    return render_template('index.html', results = matching_rows)
+    return render_template('index.html', results=matching_rows)
+
 
 if __name__ == '__main__':
    app.run(host='0.0.0.0', port=9001)
