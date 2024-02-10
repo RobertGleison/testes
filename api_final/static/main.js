@@ -1,4 +1,5 @@
 const { createApp } = Vue;
+
 const TaskApp = {
   data() {
     return {};
