@@ -3,11 +3,16 @@ import csv_processor as csv
 
 app = Flask(__name__)
 
-#Endpoint de pesquisa
+#Endpoint de pesquisa que pode aceitar termos de pesquisa normais ou vazios
+@app.route('/search', defaults={'term': None})
 @app.route('/search/<term>')
 def search(term):
-    matching_rows = csv.append_matching_rows(term)
+    if term is None:
+        matching_rows = csv.append_all_rows()
+    else:
+        matching_rows = csv.append_matching_rows(term)
     return render_template('result-list.html', results=matching_rows)
+
 
 #Página inicial
 @app.route('/')

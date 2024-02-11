@@ -24,5 +24,12 @@ def append_matching_rows(term: str) -> list[str]:
                 break
     return matching_rows
 
+def append_all_rows() -> list[str]:
+    matching_rows = []
+    for row in CSV_ROWS:
+        matching_rows.append(row)
+    return matching_rows
+
+
 def get_CSV_ROWS() -> list[str]:
     return CSV_ROWS

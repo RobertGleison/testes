@@ -1,11 +1,21 @@
 {% extends 'base.html' %} {% block content %}
-<form
-  name="form-input"
-  action="javascript:window.open('/search/'+document.forms['form-input'].elements['id'].value,'_self')"
->
-  Procurar por termo: <input name="id" type="text" /><input
+<form name="form-input" onsubmit="return submitForm()">
+  Procurar por termo: <input id="search-term" name="id" type="text" /><input
     type="submit"
     value="PESQUISAR"
   />
 </form>
+
+<!-- Confere the existe ou não um termo para a pesquisa e aciona o endpoint /search -->
+<script>
+  function submitForm() {
+    var searchTerm = document.forms["form-input"].elements["id"].value.trim();
+    if (searchTerm === "") {
+      window.open("/search", "_self");
+    } else {
+      window.open("/search/" + searchTerm, "_self");
+    }
+    return false;
+  }
+</script>
 {% endblock %}
