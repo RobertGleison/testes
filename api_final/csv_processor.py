@@ -12,7 +12,7 @@ def read_csv() -> None:
     except RuntimeError:
         print("Error in reading the csv file.")
 
-#Retorna as linhas compatíveis com a pesquisa de texto
+#Retorna as linhas do CSV compatíveis com a pesquisa de texto
 def append_matching_rows(term: str) -> list[str]:
     matching_rows = []
     term_upper = term.upper() 
@@ -24,6 +24,7 @@ def append_matching_rows(term: str) -> list[str]:
                 break
     return matching_rows
 
+#Retorna todas as linhas do CSV
 def append_all_rows() -> list[str]:
     matching_rows = []
     for row in CSV_ROWS:

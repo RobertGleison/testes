@@ -7,10 +7,10 @@ app = Flask(__name__)
 @app.route('/search', defaults={'term': None})
 @app.route('/search/<term>')
 def search(term):
-    if term is None:
-        matching_rows = csv.append_all_rows()
-    else:
+    if term:
         matching_rows = csv.append_matching_rows(term)
+    else:
+        matching_rows = csv.append_all_rows()
     return render_template('result-list.html', results=matching_rows)
 
 
