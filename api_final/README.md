@@ -4,15 +4,9 @@ Atualmente, minha stack principal é Java com Spring, ainda não sou tão profic
 
 ## Dependências
 
-Deve ter Python instalado, o package manager pip e o Flask. 
-
-pip:
+Deve ter Python instalado, o package manager pip e o Flask:
 ```
 sudo apt-get install python3 python3-pip
-```
-
-flask:
-```
 pip install Flask
 ``` 
 Para rodar a aplicação, use o comando abaixo e conecte no localhost:9001:
