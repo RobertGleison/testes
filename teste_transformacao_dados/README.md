@@ -11,5 +11,3 @@ Logo após, instale o pacote Tabula-py.
 ```
 pip install tabula-py
 ```
-
-Documentação referência: https://www.crummy.com/software/BeautifulSoup/bs4/doc/#calling-a-tag-is-like-calling-find-all
