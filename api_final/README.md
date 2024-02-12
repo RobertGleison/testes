@@ -1,6 +1,24 @@
 ## Observações
 
-Atualmente, minha stack principal é Java com Spring, ainda não sou tão proficiente com JavaScript, embora já tenha usado e pretendo estudar este semestre. Portanto, optei por desenvolver esta interface web sem javascript, apenas Flask, html e css, apesar de reconhecer a utilidade do framework Vue.js (que inclusive dei uma estudada sempre que foi possível essa semana).
+Atualmente, minha stack principal é Java com Spring, ainda não sou tão proficiente com JavaScript, embora já tenha usado e pretendo estudar este semestre. Portanto, optei por desenvolver esta interface web sem Vue e sem Single Page Application. 
+
+## Dependências
+
+Deve ter Python instalado, o package manager pip e o Flask. 
+
+pip:
+```
+sudo apt-get install python3 python3-pip
+```
+
+flask:
+```
+pip install Flask
+``` 
+Para rodar a aplicação, use o comando abaixo e conecte no localhost:9001:
+```
+python3 app.py
+``` 
 
 ## Sobre Performance
 
