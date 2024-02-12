@@ -6,7 +6,7 @@ app = Flask(__name__)
 #Endpoint de pesquisa que pode aceitar termos de pesquisa normais ou vazios
 @app.route('/search', defaults={'term': None})
 @app.route('/search/<term>')
-def search(term):
+def search(term: str):
     if term:
         matching_rows = csv.append_matching_rows(term)
     else:
