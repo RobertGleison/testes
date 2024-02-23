@@ -4,6 +4,7 @@ import tabula
 import zipfile
 import os
 import logging
+import numpy as np
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -27,26 +28,25 @@ def extraction(pdf: str, template: str) -> list[any]:
 
 
 def create_csv(data: list[any]) -> str:
+    merged_data = []
+    csv_filename = "rol_de_procedimentos.csv"
     column_names = ["PROCEDIMENTO", "RN (alteração)", "VIGÊNCIA", "Seg.Odontológica", "Seg.Ambiental", "HCO", "HSO",
                     "REF", "PAC", "DUT", "SUBGRUPO", "GRUPO", "CAPÍTULO"]
-    # merged_data = pd.concat(data) # Concatena as tabelas
-    final_list = []
-    for df in data:
-        temp_list = df.to_records(index=False).tolist()
-        final_list += temp_list
 
-    csv_filename = "rol_de_procedimentos.csv"
+    # Transforma a lista de dataframes em uma lista de tuplas com 13 colunas
+    for df in data:
+        df.replace(np.nan, '', inplace=True)
+        temp_list = df.to_records(index=False).tolist()
+        merged_data += temp_list
+
     with open(csv_filename, 'w', newline='') as f:
         writer = csv.writer(f)
-
-        # Write the column names as the header
         writer.writerow(column_names)
-
-        # Write each tuple as a separate row
-        for row in final_list:
+        for row in merged_data:
             writer.writerow(row)
 
     return csv_filename
+
 
 def create_zip(csv_name: str) -> None:
     zip_filename = "Teste_Robert_Gleison_dos_Reis_Pereira.zip"
@@ -55,7 +55,11 @@ def create_zip(csv_name: str) -> None:
     # Remove os .csv fora do zip
     os.remove(csv_name)
 
+def main():
+    data = extraction("anexo1.pdf", "template_final.json")
+    csv_name = create_csv(data)
+    create_zip(csv_name)
 
-data = extraction("anexo1.pdf", "template_final.json")
-csv_name = create_csv(data)
-create_zip(csv_name)
+
+if __name__ == "__main__":
+    main()
