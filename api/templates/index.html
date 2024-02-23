@@ -1,0 +1,8 @@
+{% extends 'base.html' %} {% block content %}
+
+<form name="form-input" onsubmit="return submitForm()">
+  <label for="search-term">Procurar por termo: </label>
+  <input id="search-term" name="id" type="text" placeholder="Jundiaí"></input>
+  <button type="submit" class="search-button">PESQUISAR</button>
+</form>
+{% endblock %}

@@ -1,0 +1,42 @@
+{
+	"info": {
+		"_postman_id": "651721b7-a79c-4503-b123-c85ec46132d5",
+		"name": "search_tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "20872624"
+	},
+	"item": [
+		{
+			"name": "search_Alice",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "homepage",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "search_406708",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "search_jundiaí",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
