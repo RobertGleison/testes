@@ -3,6 +3,7 @@ import os
 import requests
 import subprocess
 
+
 def get_links(url: str) -> dict:
     links = {}
     try:
@@ -35,7 +36,7 @@ def zip_files(files: list, zip_filename: str) -> None:
     subprocess.run(["zip", zip_filename] + files, cwd="./")
 
 
-def download_files(links: dict) -> list:
+def download_all_files(links: dict) -> list:
     downloaded_files = []
     for key, value in links.items():
         temp_split = str(value).split('.')
@@ -46,7 +47,7 @@ def download_files(links: dict) -> list:
     return downloaded_files
 
 
-def download_first_n_pdfs(links: dict, n: int) -> None:
+def download_first_2_pdfs(links: dict, n: int) -> None:
     counter = 0
     for key, value in links.items():
         temp_split = str(value).split('.')
@@ -60,12 +61,11 @@ def download_first_n_pdfs(links: dict, n: int) -> None:
 def main():
     url = "https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-da-sociedade/atualizacao-do-rol-de-procedimentos"
     links = get_links(url)
-    downloaded_files = download_files(links)
+    downloaded_files = download_all_files(links)
     zip_filename = "Anexos.zip"
     zip_files(downloaded_files, zip_filename)
-
     remove_files(downloaded_files)
-    download_first_n_pdfs(links, 2)
+    download_first_2_pdfs(links, 2)
 
 
 if __name__ == "__main__":
